@@ -1,46 +1,17 @@
-// Funciones
+import { heroes } from "./data/heroes";
 
-const saludar = function (nombre) {
-    return `Hola ${nombre}`;
+console.log(heroes);
+
+const getHeroesById = ( id ) => {
+    return heroes.find( heroe => heroe.id === id);
 }
 
-const saludar2 = (nombre) => {
-    return `Hola ${nombre}`;
+console.log( getHeroesById(2) ); 
+
+const getHeroesByOwner = ( owner ) => {
+
+    return heroes.filter( heroe => heroe.owner === owner)
+
 }
 
-const saludar3 = (nombre) => `Hola ${nombre}`
-
-console.log(saludar('Luna'));
-console.log(saludar2('Bruno'));
-console.log(saludar3('Mambo'));
-
-
-const getUser = () => (
-    {
-        uid: 'ABC123',
-        username: 'Bruno_2021'
-    }
-);
-
-const user = getUser();
-console.log(user);
-
-// Tarea
-
-// function getUsuarioActivo(nombre) {
-//     return {
-//         uid: 'ABC567',
-//         username: nombre
-//     }
-// }
-
-const getUsuarioActivo = (nombre) => (
-    {
-        uid: 'ABC567',
-        username: nombre
-    }
-);
-
-const usuarioActivo = getUsuarioActivo('luna');
-
-console.log(usuarioActivo);
+console.log(getHeroesByOwner('Marvel'));
