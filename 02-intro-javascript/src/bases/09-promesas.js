@@ -35,6 +35,5 @@ const getHeroeByIdAsync = (id) => {
 
 }
 
-getHeroeByIdAsync(7)
+getHeroeByIdAsync(4)
     .then( console.log )
-    .catch( console.warn );
