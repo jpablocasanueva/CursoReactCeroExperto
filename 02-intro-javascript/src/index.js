@@ -1,26 +1,21 @@
-// AsymcAwait
+// Operacion condicional ternario
 
-// const getImagePromise = () => new Promise( resolve => resolve('https://google.com'));
-// getImagePromise().then( console.log );
+const active = true;
+
+// FormaTradicional
+
+// let mensaje = '';
+
+// if( !activo ) {
+//     mensaje = 'activo';
+// } else {
+//     mensaje = 'inactivo';
+// } 
 
 
+// Con Operador Ternario
 
-const getImagen = async () => {
+const message = ( active ) ? 'Active' : 'Inactive';
 
-    try {
+console.log(message);
 
-        const apiKey = '1BPSW1Vgk0b13UV7UiPHunrCa5KUGyr8';
-        const resp = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`);
-        const { data } = await resp.json();
-        const { url } = data.images.original;
-
-        const img = document.createElement('img')
-        img.src = url;
-        document.body.append(img);
-
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-getImagen(); 
